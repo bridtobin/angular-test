@@ -1,0 +1,10 @@
+<table id=found-table>
+  <th ng-if="narrow.found.length>0">Name</th>
+  <th ng-if="narrow.found.length>0">Description</th>
+  <th ng-if="narrow.found.length>0">Short Name</th>
+
+  <tr ng-repeat="item in narrow.found">
+    <td>{{ item.name }}</td> <td>{{ item.description }}</td> <td>{{ item.short_name }}</td>
+    <td class="cell-no-pad"><button ng-click="narrow.onRemove({index: $index});">Don't Want This One</button></td>
+  </tr>
+</table>
