@@ -1,0 +1,39 @@
+<div class="container">
+<div ng-if="userCtrl.signedUp">
+  <div class="menu-item-tile col-md-12 col-lg-12">
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
+        <h4>Your current details are:</h4>
+        <div class="userdetail">
+          Name:  {{userCtrl.user.firstname}}<br>
+          Surname: {{userCtrl.user.surname}}<br>
+          Email:  {{userCtrl.user.email}}<br>
+          Phone:  {{userCtrl.user.phone}}<br>
+        </div>
+      </div>
+      <div class="menu-item-description col-sm-4 col-md-4">
+        <h4>Your favourite dish is:</h4><br>
+        <h3 class="menu-item-title">{{userCtrl.user.menuname}}</h3>
+        <p class="menu-item-details">{{userCtrl.user.description}}</p>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <div class="menu-item-photo">
+          <div>{{ userCtrl.user.short_name}}</div>
+          <img class="img-responsive" width="250" height="150" ng-src="{{userCtrl.basePath.trim()}}/images/{{userCtrl.user.short_name}}.jpg" alt="{{userCtrl.user.menuname}}">
+        </div>
+      </div>
+      </div>
+    <hr class="visible-xs">
+  </div>
+</div>
+
+
+<div  >
+  <div class="menu-item-tile col-md-12 col-lg-12">
+    <div class="row">
+    <div ng-if="userCtrl.signedUp==false">Not signed up yet</div>
+      <button ui-sref="public.signup"> {{ userCtrl.signedUp == true ? 'Edit your details' : 'Sign Up Now' }}</button>
+    </div>
+  </div>
+  </div>
+</div>
